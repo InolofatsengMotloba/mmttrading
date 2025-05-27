@@ -8,6 +8,7 @@ import {
   FaTimes,
   FaArrowRight,
   FaMapMarkerAlt,
+  FaPlay,
 } from "react-icons/fa";
 import Image from "next/image";
 
@@ -48,7 +49,7 @@ export default function HeroSection() {
             : "bg-transparent py-0"
         }`}
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-16">
           {/* Top bar with contact info */}
           <div
             className={`border-b border-white/10 transition-all duration-300 ${
@@ -141,8 +142,8 @@ export default function HeroSection() {
                 : "max-h-0 opacity-0 overflow-hidden"
             }`}
           >
-            <div className="py-4 border-t border-white/10 bg-gray-900 bg-opacity-95 backdrop-blur-md">
-              <div className="flex flex-col gap-4 px-4">
+            <div className="py-4 border-t border-white/10">
+              <div className="flex flex-col gap-4">
                 {["Home", "About", "Services", "Portfolio", "Contact"].map(
                   (item) => (
                     <a
@@ -165,7 +166,7 @@ export default function HeroSection() {
       </header>
 
       {/* Hero Content */}
-      <div className="relative z-10 min-h-screen flex items-center pt-24">
+      <div className="relative z-10 min-h-screen flex items-center pt-24 px-10">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
             {/* Main Heading */}
