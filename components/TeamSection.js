@@ -57,6 +57,7 @@ export default function TeamSection() {
                 alt="Vuyelwa Hesewu"
                 fill
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                priority
               />
             </div>
 

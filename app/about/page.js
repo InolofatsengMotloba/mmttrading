@@ -47,6 +47,7 @@ export default function About() {
                 alt="Mangemahle Trading Founders"
                 fill
                 className="object-cover"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                 <div>
