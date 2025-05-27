@@ -9,7 +9,7 @@ import {
   FaArrowRight,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import { usePathname } from "next/navigation"; 
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function Header() {
@@ -113,14 +113,20 @@ export default function Header() {
 
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-4">
-              <button
-                className={`bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2 ${
-                  isScrolled ? "px-3 py-1.5 text-sm" : "px-4 py-2"
-                }`}
+              <a
+                href="https://wa.me/27787244418?text=Hello%2C%20I'm%20interested%20in%20your%20digital%20branding%20and%20printing%20services."
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Get Quote
-                <FaArrowRight size={12} />
-              </button>
+                <button
+                  className={`bg-gradient-to-r from-yellow-400 to-yellow-500 text-black rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2 ${
+                    isScrolled ? "px-3 py-1.5 text-sm" : "px-4 py-2"
+                  }`}
+                >
+                  Get Quote
+                  <FaArrowRight size={12} />
+                </button>
+              </a>
             </div>
 
             {/* Mobile Button */}
@@ -167,9 +173,15 @@ export default function Header() {
                   </Link>
                 );
               })}
-              <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold w-full">
-                Get Quote
-              </button>
+              <a
+                href="https://wa.me/27787244418?text=Hello%2C%20I'm%20interested%20in%20your%20digital%20branding%20and%20printing%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold w-full">
+                  Get Quote
+                </button>
+              </a>
             </div>
           </div>
         </div>
