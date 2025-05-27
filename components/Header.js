@@ -9,10 +9,13 @@ import {
   FaArrowRight,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { usePathname } from "next/navigation"; 
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname(); // Get current path
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +24,8 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const navItems = ["Home", "About", "Services", "Contact"];
 
   return (
     <header
@@ -76,18 +81,34 @@ export default function Header() {
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center gap-8">
-              {["Home", "About", "Services", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                  className={`text-white hover:text-yellow-400 font-medium transition-colors duration-300 relative group ${
-                    isScrolled ? "text-base" : "text-lg"
-                  }`}
-                >
-                  {item}
-                  <div className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"></div>
-                </a>
-              ))}
+              {navItems.map((item) => {
+                const href = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+                const isActive =
+                  pathname === href ||
+                  (pathname.startsWith(`/${item.toLowerCase()}`) &&
+                    item !== "Home");
+
+                return (
+                  <Link
+                    key={item}
+                    href={href}
+                    className={`font-medium relative group transition-colors duration-300 ${
+                      isScrolled ? "text-base" : "text-lg"
+                    } ${
+                      isActive
+                        ? "text-yellow-400"
+                        : "text-white hover:text-yellow-400"
+                    }`}
+                  >
+                    {item}
+                    <div
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-yellow-400 transition-all duration-300 ${
+                        isActive ? "w-full" : "w-0 group-hover:w-full"
+                      }`}
+                    ></div>
+                  </Link>
+                );
+              })}
             </div>
 
             {/* CTA */}
@@ -124,18 +145,28 @@ export default function Header() {
         >
           <div className="py-4 border-t border-white/10">
             <div className="flex flex-col gap-4">
-              {["Home", "About", "Services", "Portfolio", "Contact"].map(
-                (item) => (
-                  <a
+              {[...navItems, "Portfolio"].map((item) => {
+                const href = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+                const isActive =
+                  pathname === href ||
+                  (pathname.startsWith(`/${item.toLowerCase()}`) &&
+                    item !== "Home");
+
+                return (
+                  <Link
                     key={item}
-                    href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
-                    className="text-white hover:text-yellow-400 font-medium transition-colors py-2"
+                    href={href}
+                    className={`font-medium transition-colors py-2 ${
+                      isActive
+                        ? "text-yellow-400"
+                        : "text-white hover:text-yellow-400"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
-                  </a>
-                )
-              )}
+                  </Link>
+                );
+              })}
               <button className="bg-gradient-to-r from-yellow-400 to-yellow-500 text-black px-4 py-2 rounded-lg font-semibold w-full">
                 Get Quote
               </button>
