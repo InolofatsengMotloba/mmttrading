@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   FaMapMarkerAlt,
   FaPhone,
@@ -42,7 +41,7 @@ export default function About() {
         <div className="flex flex-col lg:flex-row gap-12 mb-20 items-center">
           <div className="lg:w-1/2">
             <div className="relative h-96 rounded-2xl overflow-hidden border-2 border-yellow-400/20 shadow-2xl">
-              <Image
+              <img
                 src="/images/employee.jpg"
                 alt="Mangemahle Trading Founders"
                 fill
