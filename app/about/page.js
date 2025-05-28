@@ -42,7 +42,7 @@ export default function About() {
           <div className="lg:w-1/2">
             <div className="relative h-96 rounded-2xl overflow-hidden border-2 border-yellow-400/20 shadow-2xl">
               <img
-                src="/images/employee.jpg"
+                src="/images/employee.JPG"
                 alt="Mangemahle Trading Founders"
                 fill
                 className="object-cover"

@@ -52,7 +52,7 @@ export default function TeamSection() {
             <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden border-4 border-transparent group-hover:border-yellow-400 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/30 to-transparent rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <img
-                src="/images/employee.jpg"
+                src="/images/employee.JPG"
                 alt="Vuyelwa Hesewu"
                 fill
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
