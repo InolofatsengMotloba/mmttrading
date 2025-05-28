@@ -55,7 +55,7 @@ export default function TeamSection() {
               <Image
                 src="/images/employee.jpg"
                 alt="Vuyelwa Hesewu"
-                className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
                 priority
                 height={30}
                 width={30}
