@@ -54,9 +54,9 @@ export default function TeamSection() {
               <img
                 src="/images/employee.JPG"
                 alt="Vuyelwa Hesewu"
-                fill
+                fill="true"
                 className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
-                priority
+                priority="true"
               />
             </div>
 

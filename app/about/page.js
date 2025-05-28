@@ -44,9 +44,9 @@ export default function About() {
               <img
                 src="/images/employee.JPG"
                 alt="Mangemahle Trading Founders"
-                fill
+                fill="true"
                 className="object-cover"
-                priority
+                priority="true"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
                 <div>
